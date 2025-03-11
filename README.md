@@ -1,1 +1,3 @@
-# Analisis-Data-Bike-Sharing
+# Run Streamlit App
+
+streamlit run dashboard.py
