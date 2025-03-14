@@ -1,4 +1,10 @@
 # Analisis Data Bike Sharing Dengan Python (Submission Dicoding)
+Preoyek ini merupakan proyek submission analisis data dengan python untuk platform dicoding dalam mnodul belajar analisis data dengan python.
+Terdapat pertanyaan bisnis yang di visualisasikan di dalam dashboard, dataset yang digunakan terdiri dari day.csv, dan hour.csv.
+
+## Dataset
+- day.csv  : Berisi data penyewaan sepeda harian.
+- hour.csv : Berisi data penyewaan sepeda per jamnya.
 
 ## Setup Environment
 ```plaintext
