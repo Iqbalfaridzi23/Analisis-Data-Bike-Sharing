@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-
 day_df = pd.read_csv("day.csv")
 hour_df = pd.read_csv("hour.csv")
 
@@ -28,8 +27,13 @@ ax[1].set_title("Distribusi Hari dalam Seminggu")
 st.pyplot(fig)
 
 st.header("Tren Peminjaman Sepeda")
+min_date = day_df["dteday"].min().to_pydatetime()
+max_date = day_df["dteday"].max().to_pydatetime()
+date_range = st.slider("Pilih Rentang Tanggal", min_value=min_date, max_value=max_date, value=(min_date, max_date), format="YYYY-MM-DD")
+filtered_df = day_df[(day_df["dteday"] >= date_range[0]) & (day_df["dteday"] <= date_range[1])]
+
 fig, ax = plt.subplots(figsize=(12, 6))
-sns.lineplot(data=day_df, x="dteday", y="cnt", ax=ax)
+sns.lineplot(data=filtered_df, x="dteday", y="cnt", ax=ax)
 ax.set_title("Tren Peminjaman Sepeda dari Waktu ke Waktu")
 ax.set_xlabel("Tanggal")
 ax.set_ylabel("Jumlah Peminjaman")
